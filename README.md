@@ -76,12 +76,13 @@ The classes and activation/cost functions as well as training and test results a
   A performance-optimized version of `digit_recognition_conv` using **Numba** for parallelization.  
 - **Features:**  
   - Uses **`njit` parallelization** with `nopython` and `prange` for faster execution  
-  - Implements training optimizations:  
+  - Implements training optimizations:
+    - **Batch printing** (printing training results every *n* batches)
     - **Learning rate decay** (adjusts learning rate every *n* epochs)  
-    - **Momentum (SGD with momentum)**  
+    - **Momentum (SGD with momentum)** (different update rule for momentum)
     - **Data contrast/gamma modifications** for training/testing
     - **Padding** for training/testing data
-  - Helper cells 
+  - Helper cells for visualizing training/testing data and convolution/maxpool output sizes.
   - Supports convolutional architectures similar to file 2  
 - **Results:**  
   The optimized CNN achieved **similar accuracy to the fully connected NN** (~97–98%) while running **much faster**.
